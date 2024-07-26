@@ -19,10 +19,17 @@ class ComprasController extends Controlle
     return $this->view('compras/index',$response);
   }
 
+  public function detalhe(ServerRequestInterface $request, ResponseInterface $response)
+  {
+    $id = $request->getAttribute('id');
+    $compra = Compra::find($id);
+    $this->compra = $compra;
+
+    return $this->view('compras/show',$response);
+  }
+
   public function adicionar(ServerRequestInterface $request, ResponseInterface $response)
   {
-
-
     return $this->view('compras/create',$response);
   }
 
@@ -33,19 +40,37 @@ class ComprasController extends Controlle
 
     $compra->titulo = $dados['titulo'];
     $compra->desc = $dados['desc'];
-    $idCompra = $compra->save();
+    $objCompra = $compra->save();
 
-    if($idCompra){
+    if($objCompra){
       //sucesso
     }else{
       //erro
     }
+    return $response->withRedirect('/compras');
+  }
+
+  public function editar(ServerRequestInterface $request, ResponseInterface $response)
+  {
+    $id = $request->getAttribute('id');
+    $compra = Compra::find($id);
+    $this->compra = $compra;
+    return $this->view('compras/edit',$response);
+  }
+
+  public function atualizar(ServerRequestInterface $request, ResponseInterface $response)
+  {
+    $dados = $request->getParsedBody();
+    $id = $request->getAttribute('id');
+    $compra = Compra::find($id);
+    //var_dump($compra);exit;
+    //$compra = new Compra;
+
+    $compra->titulo = $dados['titulo'];
+    $compra->desc = $dados['desc'];
+    $objCompra = $compra->save();
 
     return $response->withRedirect('/compras');
-
-
-
-
   }
 
 
