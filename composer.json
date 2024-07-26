@@ -1,0 +1,17 @@
+{
+    "name": "cassi/aula-slim",
+    "require": {
+        "slim/slim": "3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cassi\\AulaSlim\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "cassio",
+            "email": "clippersummer87@gmail.com"
+        }
+    ]
+}
