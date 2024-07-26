@@ -5,7 +5,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Cassi\\AulaSlim\\": "src/"
+            "app\\": "app/"
         }
     },
     "authors": [
