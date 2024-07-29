@@ -98,5 +98,14 @@ class Model
 
   }
 
+  public function delete()
+  {
+    $conn = Db::conexao();
+    $delete = "DELETE FROM `".$this->table."` WHERE `".$this->primary_key."`=:id;";
+    $stmt = $conn->prepare($delete);
+    $stmt->bindValue(':id',$this->{$this->primary_key});
+    return $stmt->execute();
+  }
+
 
 }

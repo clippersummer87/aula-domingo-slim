@@ -18,3 +18,7 @@ http://www.php-fig.org/psr/psr-4/
 
 Autoload com PSR-4 + Composer
 https://getcomposer.org/doc/01-basic-usage.md#autoloading
+
+Se der esse erro: [404]: GET / - No such file or directory
+fazer o seguinte entrar no: cd public
+php -S localhost:8080
