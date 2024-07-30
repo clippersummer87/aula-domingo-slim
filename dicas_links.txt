@@ -19,6 +19,10 @@ http://www.php-fig.org/psr/psr-4/
 Autoload com PSR-4 + Composer
 https://getcomposer.org/doc/01-basic-usage.md#autoloading
 
-Se der esse erro: [404]: GET / - No such file or directory
-fazer o seguinte entrar no: cd public
-php -S localhost:8080
+Criar Tabela Usuários SQL:
+CREATE TABLE `usuarios` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(100) NOT NULL,
+  `email` VARCHAR(150) NOT NULL,
+  `senha` VARCHAR(150) NOT NULL,
+  PRIMARY KEY (`id`));

@@ -2,11 +2,6 @@
 
 <?php include 'layout/topo.php'; ?>
     <h2>Essa é a página principal</h2>
-    <p>Lista de Compras</p>
-    <ul>
-      <?php foreach ($this->compras as $key => $value): ?>
-        <li><?php echo  $value['titulo']?> - <?php echo  $value['desc']?></li>
-      <?php endforeach ?>
-    </ul>
+    <a href="/compras">Lista de Compras</a>
 
   <?php include 'layout/rodape.php'; ?>
